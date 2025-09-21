@@ -1,97 +1,62 @@
 /* =========================
-   CUSTOM ECO-HOME STYLES
+   CATÁLOGO ECO-HOME
    ========================= */
 
-/* 1. Fondo y tipografía general */
-body {
-  background: #ffffff !important; /* blanco limpio */
-  color: #333 !important;
-  font-family: 'Poppins', sans-serif !important;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 1.75em;
+/* Contenedor de productos: grid responsive */
+.productos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin: 2em 0;
 }
 
-/* 2. Encabezados */
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Poppins', sans-serif !important;
-  font-weight: 600;
-  color: #2d572c; /* verde eco */
+/* Cada producto */
+.producto {
+  background: #f9f9f9; /* fondo ligero para resaltar */
+  border-radius: 10px;
+  padding: 1em;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+  transform: translateY(20px);
+  opacity: 0;
+  transition: opacity 0.5s ease, transform 0.5s ease, box-shadow 0.3s ease, transform 0.3s ease;
 }
 
-/* 3. Links */
-a {
-  color: #4caf50; /* verde eco */
-  text-decoration: none;
-}
-a:hover {
-  color: #388e3c;
-  text-decoration: underline;
-}
-
-/* 4. Botones */
-.button,
-input[type="button"],
-input[type="submit"],
-button {
-  background: #4caf50 !important; /* verde eco */
-  color: #fff !important;
-  border-radius: 6px;
-  font-weight: 600;
-  transition: background 0.3s ease;
-}
-.button:hover,
-input[type="button"]:hover,
-input[type="submit"]:hover,
-button:hover {
-  background: #388e3c !important;
+/* Imagen del producto */
+.producto img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+  margin-bottom: 0.8em;
 }
 
-/* 5. Header */
-#header {
-  background: #ffffff !important;
-  border-bottom: 2px solid #e0e0e0;
-  padding: 3em 0 2em 0;
-}
-#header h1 a {
-  color: #2d572c !important;
-}
-
-/* 6. Navegación */
-#nav > ul > li > a {
-  color: #2d572c !important;
-  font-style: normal;
-}
-#nav > ul > li.current > a {
-  background: #4caf50 !important;
-  color: #fff !important;
-}
-
-/* 7. Banner */
-#banner {
-  background: url("images/banner.jpg") no-repeat center center !important;
-  background-size: cover !important;
-  padding: 6em 0;
-  margin: 0;
-}
-#banner header {
-  background: none !important;
-  padding: 0 !important;
-}
-#banner h2 {
-  color: #2d572c !important;
-  font-size: 2.5em;
-}
-#banner p {
-  color: #555 !important;
+/* Nombre y descripción */
+.producto h3 {
   font-size: 1.2em;
+  color: #2d572c;
+  margin: 0.5em 0 0.3em 0;
+}
+.producto p {
+  font-size: 0.95em;
+  color: #555;
+  margin-bottom: 0.5em;
 }
 
-/* 8. Footer */
-#footer {
-  background: #2d572c !important;
-  color: #ffffff !important;
+/* Precio */
+.producto .precio {
+  font-weight: 600;
+  color: #4caf50;
+  font-size: 1em;
 }
-#footer a {
-  color: #cce8f4 !important;
+
+/* Hover efecto elegante */
+.producto:hover {
+  box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+  transform: translateY(-5px);
+}
+
+/* Para animación fade-in desde JS */
+.producto.aparecer {
+  opacity: 1;
+  transform: translateY(0);
 }
