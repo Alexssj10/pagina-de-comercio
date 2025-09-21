@@ -1,19 +1,15 @@
-// assets/js/catalogo.js
 document.addEventListener("DOMContentLoaded", () => {
+  const contenedor = document.querySelector("#catalogo .productos");
+
+  // Si no existe la sección, no hacemos nada
+  if (!contenedor) return;
+
   fetch("assets/data/catalogo.json")
     .then(response => response.json())
     .then(data => {
-      const contenedor = document.querySelector(".productos");
-
-      if (!contenedor) {
-        console.error("No se encontró el contenedor .productos en tu HTML.");
-        return;
-      }
-
       data.forEach((item, index) => {
         const producto = document.createElement("div");
         producto.classList.add("producto");
-        producto.style.opacity = 0; // Para animación
 
         producto.innerHTML = `
           <img src="images/${item.imagen}" alt="${item.nombre}">
@@ -24,12 +20,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
         contenedor.appendChild(producto);
 
-        // Animación fade-in con retraso por índice
+        // Animación fade-in
         setTimeout(() => {
           producto.style.transition = "opacity 0.5s ease, transform 0.5s ease";
           producto.style.opacity = 1;
           producto.style.transform = "translateY(0)";
-        }, 100 * index); // cada producto aparece con un pequeño delay
+        }, 100 * index);
       });
     })
     .catch(error => console.error("Error cargando catálogo:", error));
