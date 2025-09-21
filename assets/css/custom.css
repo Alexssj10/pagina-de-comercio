@@ -1,18 +1,8 @@
 /* =========================
-   CATÁLOGO ECO-HOME
+   CATÁLOGO ECO-HOME - TIPOGRAFÍA Y ESTILO
    ========================= */
-
-/* Contenedor de productos: grid responsive */
-.productos {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-  margin: 2em 0;
-}
-
-/* Cada producto */
 .producto {
-  background: #f9f9f9; /* fondo ligero para resaltar */
+  background: #f9f9f9;
   border-radius: 10px;
   padding: 1em;
   box-shadow: 0 3px 8px rgba(0,0,0,0.1);
@@ -21,7 +11,6 @@
   transition: opacity 0.5s ease, transform 0.5s ease, box-shadow 0.3s ease, transform 0.3s ease;
 }
 
-/* Imagen del producto */
 .producto img {
   width: 100%;
   height: auto;
@@ -30,33 +19,34 @@
   margin-bottom: 0.8em;
 }
 
-/* Nombre y descripción */
 .producto h3 {
-  font-size: 1.2em;
-  color: #2d572c;
+  font-family: 'Poppins', sans-serif !important;
+  font-weight: 600 !important;
+  color: #2d572c !important;
   margin: 0.5em 0 0.3em 0;
 }
+
 .producto p {
+  font-family: 'Poppins', sans-serif !important;
+  font-weight: 400 !important;
+  color: #555 !important;
   font-size: 0.95em;
-  color: #555;
-  margin-bottom: 0.5em;
 }
 
-/* Precio */
 .producto .precio {
-  font-weight: 600;
-  color: #4caf50;
-  font-size: 1em;
+  font-family: 'Poppins', sans-serif !important;
+  font-weight: 600 !important;
+  color: #4caf50 !important;
 }
 
-/* Hover efecto elegante */
 .producto:hover {
   box-shadow: 0 6px 16px rgba(0,0,0,0.2);
   transform: translateY(-5px);
 }
 
-/* Para animación fade-in desde JS */
-.producto.aparecer {
-  opacity: 1;
-  transform: translateY(0);
+.productos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin: 2em 0;
 }
