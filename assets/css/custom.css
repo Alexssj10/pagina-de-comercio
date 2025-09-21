@@ -2,13 +2,14 @@
    CATÁLOGO ECO-HOME - TIPOGRAFÍA Y ESTILO
    ========================= */
 .producto {
-  background: #f9f9f9;
+  background: #f9ead7;
   border-radius: 10px;
   padding: 1em;
-  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
   transform: translateY(20px);
   opacity: 0;
-  transition: opacity 0.5s ease, transform 0.5s ease, box-shadow 0.3s ease, transform 0.3s ease;
+  transition: opacity 0.5s ease, transform 0.5s ease, box-shadow 0.3s ease,
+    transform 0.3s ease;
 }
 
 .producto img {
@@ -20,27 +21,27 @@
 }
 
 .producto h3 {
-  font-family: 'Poppins', sans-serif !important;
+  font-family: "Poppins", sans-serif !important;
   font-weight: 600 !important;
   color: #2d572c !important;
   margin: 0.5em 0 0.3em 0;
 }
 
 .producto p {
-  font-family: 'Poppins', sans-serif !important;
+  font-family: "Poppins", sans-serif !important;
   font-weight: 400 !important;
   color: #555 !important;
   font-size: 0.95em;
 }
 
 .producto .precio {
-  font-family: 'Poppins', sans-serif !important;
+  font-family: "Poppins", sans-serif !important;
   font-weight: 600 !important;
   color: #4caf50 !important;
 }
 
 .producto:hover {
-  box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
   transform: translateY(-5px);
 }
 
@@ -49,4 +50,29 @@
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
   margin: 2em 0;
+}
+/* Centrar el header y el logo */
+header .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Ajustar el tamaño del logo */
+.logo {
+  display: inline-block;
+  vertical-align: middle;
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  margin-right: 10px;
+}
+
+/* Centrar el texto junto al logo */
+header h1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 2em;
 }
