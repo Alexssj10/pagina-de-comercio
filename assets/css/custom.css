@@ -1,0 +1,97 @@
+/* =========================
+   CUSTOM ECO-HOME STYLES
+   ========================= */
+
+/* 1. Fondo y tipografía general */
+body {
+  background: #ffffff !important; /* blanco limpio */
+  color: #333 !important;
+  font-family: 'Poppins', sans-serif !important;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.75em;
+}
+
+/* 2. Encabezados */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Poppins', sans-serif !important;
+  font-weight: 600;
+  color: #2d572c; /* verde eco */
+}
+
+/* 3. Links */
+a {
+  color: #4caf50; /* verde eco */
+  text-decoration: none;
+}
+a:hover {
+  color: #388e3c;
+  text-decoration: underline;
+}
+
+/* 4. Botones */
+.button,
+input[type="button"],
+input[type="submit"],
+button {
+  background: #4caf50 !important; /* verde eco */
+  color: #fff !important;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+.button:hover,
+input[type="button"]:hover,
+input[type="submit"]:hover,
+button:hover {
+  background: #388e3c !important;
+}
+
+/* 5. Header */
+#header {
+  background: #ffffff !important;
+  border-bottom: 2px solid #e0e0e0;
+  padding: 3em 0 2em 0;
+}
+#header h1 a {
+  color: #2d572c !important;
+}
+
+/* 6. Navegación */
+#nav > ul > li > a {
+  color: #2d572c !important;
+  font-style: normal;
+}
+#nav > ul > li.current > a {
+  background: #4caf50 !important;
+  color: #fff !important;
+}
+
+/* 7. Banner */
+#banner {
+  background: url("images/banner.jpg") no-repeat center center !important;
+  background-size: cover !important;
+  padding: 6em 0;
+  margin: 0;
+}
+#banner header {
+  background: none !important;
+  padding: 0 !important;
+}
+#banner h2 {
+  color: #2d572c !important;
+  font-size: 2.5em;
+}
+#banner p {
+  color: #555 !important;
+  font-size: 1.2em;
+}
+
+/* 8. Footer */
+#footer {
+  background: #2d572c !important;
+  color: #ffffff !important;
+}
+#footer a {
+  color: #cce8f4 !important;
+}
