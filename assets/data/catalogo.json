@@ -2,55 +2,55 @@
   {
     "nombre": "Casa Eco Básico",
     "descripcion": "Hecha con madera plástica reciclada. Tornillería galvanizada. Techo removible para limpieza. Base elevada para evitar contacto con tierra y humedad.",
-    "precio": "$250.00",
+    "precio": "$250.000",
     "imagen": "casa_eco_basico.jpg"
   },
   {
     "nombre": "Casa Eco Premium",
     "descripcion": "Laminado de PET reciclado. Madera tratada sin químicos nocivos. Aislamiento interior. Pintura ecológica resistente UV y techo verde opcional.",
-    "precio": "$500.00",
+    "precio": "$500.000",
     "imagen": "casa_eco_premium.jpg"
   },
   {
     "nombre": "Casa Eco Lujo / Diseño",
     "descripcion": "Madera plástica de grado estructural reciclada. Diseño modular. Ventanas tipo célula ventilada. Base con patas de acero inoxidable y acabado estético premium.",
-    "precio": "$900.00",
+    "precio": "$900.000",
     "imagen": "casa_eco_lujo.jpg"
   },
   {
     "nombre": "Gimnasio Compacto",
     "descripcion": "Diseño práctico para espacios reducidos. Incluye rascador con cuerda de sisal, plataformas básicas y una pequeña cueva.",
-    "precio": "$95.00",
+    "precio": "$95.000",
     "imagen": "gimnasio_compacto.jpg"
   },
   {
     "nombre": "Gimnasio Mediano",
     "descripcion": "Estructura de varios niveles con plataformas a distintas alturas. Túneles y cuevas que estimulan el juego, la curiosidad y la actividad física.",
-    "precio": "$130.00",
+    "precio": "$130.000",
     "imagen": "gimnasio_mediano.jpg"
   },
   {
     "nombre": "Gimnasio Premium",
     "descripcion": "Torre de gran altura con múltiples niveles. Hamacas, miradores y juguetes colgantes que invitan a saltar, trepar y descansar desde lo alto.",
-    "precio": "$210.00",
+    "precio": "$210.000",
     "imagen": "gimnasio_premium.jpg"
   },
   {
     "nombre": "Comida barf 250 g",
     "descripcion": "Alimentación natural a base de carne cruda, huesos y vegetales. Presentación de 250 g.",
-    "precio": "$8.50",
+    "precio": "$8.500",
     "imagen": "comida_barf_250g.jpg"
   },
   {
     "nombre": "Comida barf 500 g",
     "descripcion": "Alimentación natural a base de carne cruda, huesos y vegetales. Presentación de 500 g.",
-    "precio": "$12.80",
+    "precio": "$12.800",
     "imagen": "comida_barf_500g.jpg"
   },
   {
     "nombre": "Comida barf 1 kg",
     "descripcion": "Alimentación natural a base de carne cruda, huesos y vegetales. Presentación de 1 kg.",
-    "precio": "$13.50",
+    "precio": "$13.500",
     "imagen": "comida_barf_1kg.jpg"
   }
 ]
