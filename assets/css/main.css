@@ -42,7 +42,7 @@ body {
 
 /* Banner */
 #banner {
-  background: url("images/fondo_1er_banner.jpg") no-repeat center center;
+  background: url("images/banner.jpg") no-repeat center center;
   background-size: cover;
   color: #795548;
   padding: 6em 0 4em 0;
