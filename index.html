@@ -12,13 +12,16 @@
     <link rel="stylesheet" href="assets/css/custom.css" />
   </head>
   <body>
+
     <header>
-      <div class="container">
+      <div class="container header-flex">
+        
         <h1>
           <a href="index.html">
             <img src="images/logo.jpg" alt="Eco-Home Logo" class="logo" />
           </a>
         </h1>
+    
         <nav>
           <ul>
             <li><a href="#catalogo">Catálogo</a></li>
@@ -27,9 +30,22 @@
             <li><a href="#contacto">Contacto</a></li>
           </ul>
         </nav>
+    
+        <div id="header-carrito">
+          <div class="carrito-resumen">
+            <span class="carrito-icono">🛒</span>
+            <span class="carrito-texto">Total: $<span id="carrito-total">0.00</span></span>
+          </div>
+          <div id="carrito-desplegable">
+            <div id="carrito-items">
+                <p>El carrito está vacío.</p>
+            </div>
+            <button id="vaciar-carrito">Vaciar Carrito</button>
+          </div>
+        </div>
+    
       </div>
     </header>
-
     <section id="banner">
       <div class="container">
         <h2>Bienvenido a Eco-Home PetShop</h2>
@@ -76,14 +92,6 @@
       </ul>
     </section>
 
-    <section class="container carrito-compras">
-      <h2>🛒 Tu Carrito</h2>
-      <div id="carrito-items">
-        <p>El carrito está vacío.</p>
-      </div>
-      <h3>Total: $<span id="carrito-total">0.00</span></h3>
-      <button id="vaciar-carrito">Vaciar Carrito</button>
-    </section>
     <footer id="contacto">
       <div class="container">
         <h2>Contacto</h2>
@@ -94,7 +102,6 @@
     </footer>
 
     <script src="assets/js/catalogo.js"></script>
-
     <script src="assets/js/carrito.js"></script>
     
   </body>
