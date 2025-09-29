@@ -45,15 +45,35 @@
       <li><strong>¿Se debe cocinar?</strong> No, se ofrece cruda para conservar nutrientes.</li>
       <li><strong>¿Cómo se conserva?</strong> Mantener congelada y descongelar antes de servir.</li>
     </ul>
-    <button>Comprar</button>
+
+    <button class="button agregar-carrito"
+            data-id="comida-barf-250g"
+            data-nombre="Comida BARF 250 g"
+            data-precio="8500">
+        Añadir al Carrito
+    </button>
+    
     <a href="index.html" style="display:block;margin-top:1.5em;">Volver al catálogo</a>
   </main>
+
+  <section class="container carrito-compras">
+    <h2>🛒 Tu Carrito</h2>
+    <div id="carrito-items">
+      <p>El carrito está vacío.</p>
+    </div>
+    <h3>Total: $<span id="carrito-total">0.00</span></h3>
+    <button id="vaciar-carrito">Vaciar Carrito</button>
+  </section>
+
   <footer id="contacto">
     <div class="container">
       <h2>Contacto</h2>
-      <p>Email: hola@eco-home.com | Tel: (91) 1234-567</p>
+      <p>Email: hola@eco-home.com | Tel: (+57) 319 374 0550</p>
       <p>&copy; 2025 Eco-Home PetShop. Todos los derechos reservados.</p>
     </div>
   </footer>
+
+  <script src="assets/js/carrito.js"></script>
+
 </body>
 </html>

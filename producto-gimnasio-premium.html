@@ -51,15 +51,35 @@
       <li><strong>¿Es estable?</strong> Sí, su base ancha y materiales robustos garantizan estabilidad.</li>
       <li><strong>¿Incluye todos los accesorios?</strong> Sí, viene completo con hamacas y juguetes colgantes.</li>
     </ul>
-    <button>Comprar</button>
+
+    <button class="button agregar-carrito"
+            data-id="gimnasio-premium"
+            data-nombre="Gimnasio Premium"
+            data-precio="210000">
+        Añadir al Carrito
+    </button>
+    
     <a href="index.html" style="display:block;margin-top:1.5em;">Volver al catálogo</a>
   </main>
+
+  <section class="container carrito-compras">
+    <h2>🛒 Tu Carrito</h2>
+    <div id="carrito-items">
+      <p>El carrito está vacío.</p>
+    </div>
+    <h3>Total: $<span id="carrito-total">0.00</span></h3>
+    <button id="vaciar-carrito">Vaciar Carrito</button>
+  </section>
+
   <footer id="contacto">
     <div class="container">
       <h2>Contacto</h2>
-      <p>Email: hola@eco-home.com | Tel: (91) 1234-567</p>
+      <p>Email: hola@eco-home.com | Tel: (+57) 319 374 0550</p>
       <p>&copy; 2025 Eco-Home PetShop. Todos los derechos reservados.</p>
     </div>
   </footer>
+
+  <script src="assets/js/carrito.js"></script>
+
 </body>
 </html>

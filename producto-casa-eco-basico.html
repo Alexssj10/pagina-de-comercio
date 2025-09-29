@@ -55,15 +55,35 @@
       <li><strong>¿Se puede usar en exteriores?</strong> Sí, es resistente a la intemperie.</li>
       <li><strong>¿Qué mantenimiento requiere?</strong> Solo limpieza periódica y revisión de la base.</li>
     </ul>
-    <button>Comprar</button>
+    
+    <button class="button agregar-carrito" 
+            data-id="casa-eco-basico" 
+            data-nombre="Casa Eco Básico" 
+            data-precio="250000">
+        Añadir al Carrito
+    </button>
+    
     <a href="index.html" style="display:block;margin-top:1.5em;">Volver al catálogo</a>
   </main>
+
+  <section class="container carrito-compras">
+    <h2>🛒 Tu Carrito</h2>
+    <div id="carrito-items">
+      <p>El carrito está vacío.</p>
+    </div>
+    <h3>Total: $<span id="carrito-total">0.00</span></h3>
+    <button id="vaciar-carrito">Vaciar Carrito</button>
+  </section>
+
   <footer id="contacto">
     <div class="container">
       <h2>Contacto</h2>
-      <p>Email: hola@eco-home.com | Tel: (91) 1234-567</p>
+      <p>Email: hola@eco-home.com | Tel: (+57) 319 374 0550</p>
       <p>&copy; 2025 Eco-Home PetShop. Todos los derechos reservados.</p>
     </div>
   </footer>
+
+  <script src="assets/js/carrito.js"></script>
+
 </body>
 </html>
