@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Eco-Home PetShop</title>
-    <!-- Si quieres, puedes eliminar main.css si no quieres estilos de plantilla -->
     <link rel="stylesheet" href="assets/css/main.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
@@ -13,7 +12,6 @@
     <link rel="stylesheet" href="assets/css/custom.css" />
   </head>
   <body>
-    <!-- Header -->
     <header>
       <div class="container">
         <h1>
@@ -32,7 +30,6 @@
       </div>
     </header>
 
-    <!-- Banner -->
     <section id="banner">
       <div class="container">
         <h2>Bienvenido a Eco-Home PetShop</h2>
@@ -42,15 +39,12 @@
       </div>
     </section>
 
-    <!-- Catálogo -->
     <main class="container" id="catalogo">
       <h2>Nuestro Catálogo</h2>
       <div class="productos">
-        <!-- Aquí el JS insertará automáticamente los productos desde catalogo.json -->
-      </div>
+        </div>
     </main>
 
-    <!-- Sobre nosotros -->
     <section id="nosotros" class="container">
       <h2>Quiénes somos</h2>
       <p>
@@ -72,7 +66,6 @@
       </p>
     </section>
 
-    <!-- Valores -->
     <section id="valores" class="container">
       <h2>Nuestros Valores</h2>
       <ul>
@@ -83,7 +76,14 @@
       </ul>
     </section>
 
-    <!-- Footer -->
+    <section class="container carrito-compras">
+      <h2>🛒 Tu Carrito</h2>
+      <div id="carrito-items">
+        <p>El carrito está vacío.</p>
+      </div>
+      <h3>Total: $<span id="carrito-total">0.00</span></h3>
+      <button id="vaciar-carrito">Vaciar Carrito</button>
+    </section>
     <footer id="contacto">
       <div class="container">
         <h2>Contacto</h2>
@@ -93,7 +93,9 @@
       </div>
     </footer>
 
-    <!-- Script que carga el catálogo -->
     <script src="assets/js/catalogo.js"></script>
+
+    <script src="assets/js/carrito.js"></script>
+    
   </body>
 </html>
