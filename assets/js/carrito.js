@@ -8,15 +8,22 @@ document.addEventListener('DOMContentLoaded', () => {
     const carritoItemsContainer = document.getElementById('carrito-items');
     const carritoTotalSpan = document.getElementById('carrito-total');
     const botonVaciarCarrito = document.getElementById('vaciar-carrito');
-    
-    // --- FUNCIÓN PARA RENDERIZAR EL CARRITO (Sin cambios) ---
+    const botonFinalizarCompra = document.getElementById('finalizar-compra');
+
+    // --- FUNCIÓN PARA RENDERIZAR EL CARRITO ---
     function renderizarCarrito() {
+        // Solo intentamos renderizar si los elementos del carrito existen en la página
+        if (!carritoItemsContainer || !carritoTotalSpan) {
+            return;
+        }
+
         carritoItemsContainer.innerHTML = '';
         if (carrito.length === 0) {
             carritoItemsContainer.innerHTML = '<p>El carrito está vacío.</p>';
             carritoTotalSpan.textContent = '0.00';
             return;
         }
+
         let total = 0;
         carrito.forEach(item => {
             const itemElement = document.createElement('div');
@@ -31,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
         carritoTotalSpan.textContent = total.toFixed(2);
     }
 
-    // --- FUNCIÓN PARA AÑADIR UN ITEM AL CARRITO (Sin cambios) ---
+    // --- FUNCIÓN PARA AÑADIR UN ITEM AL CARRITO ---
     function agregarAlCarrito(id, nombre, precio) {
         const itemExistente = carrito.find(item => item.id === id);
         if (itemExistente) {
@@ -43,26 +50,24 @@ document.addEventListener('DOMContentLoaded', () => {
         renderizarCarrito();
     }
     
-    // --- FUNCIÓN PARA VACIAR EL CARRITO (Sin cambios) ---
+    // --- FUNCIÓN PARA VACIAR EL CARRITO ---
     function vaciarCarrito() {
         carrito = [];
         guardarCarritoEnStorage();
         renderizarCarrito();
     }
 
-    // --- FUNCIÓN PARA GUARDAR EL CARRITO EN SESSIONSTORAGE (Sin cambios) ---
+    // --- FUNCIÓN PARA GUARDAR EL CARRITO EN SESSIONSTORAGE ---
     function guardarCarritoEnStorage() {
         sessionStorage.setItem('carrito', JSON.stringify(carrito));
     }
     
     // ==================================================================
-    // --- MANEJO DE EVENTOS (AQUÍ ESTÁ EL CAMBIO IMPORTANTE) ---
+    // --- MANEJO DE EVENTOS ---
     // ==================================================================
 
-    // En lugar de vigilar solo la sección '.productos', ahora vigilamos TODA la página.
-    // Esto funciona tanto en el catálogo como en las páginas de producto individuales.
+    // Event listener universal para los botones "Añadir al Carrito"
     document.addEventListener('click', (evento) => {
-        // Verificamos si el elemento clickeado tiene la clase 'agregar-carrito'
         if (evento.target.classList.contains('agregar-carrito')) {
             const boton = evento.target;
             const id = boton.dataset.id;
@@ -73,14 +78,44 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // El evento para vaciar el carrito no necesita cambios, pero nos aseguramos que no falle si no está en la página.
+    // Event listener para el botón "Vaciar Carrito" (si existe en la página)
     if (botonVaciarCarrito) {
         botonVaciarCarrito.addEventListener('click', vaciarCarrito);
     }
 
-    // --- INICIALIZACIÓN ---
-    // Renderizamos el carrito por primera vez al cargar la página (si el contenedor existe)
-    if (carritoItemsContainer) {
-        renderizarCarrito();
+    // Event listener para el botón "Finalizar Compra" (si existe en la página)
+    if (botonFinalizarCompra) {
+        botonFinalizarCompra.addEventListener('click', () => {
+            if (carrito.length === 0) {
+                alert("Tu carrito está vacío. Añade productos antes de finalizar la compra.");
+                return;
+            }
+
+            // Reemplaza con tu número de WhatsApp en formato internacional (ej: 57 para Colombia)
+            const tuNumero = "573218393349"; 
+
+            let mensaje = "¡Hola! Quisiera hacer el siguiente pedido:\n\n";
+            let totalPedido = 0;
+
+            carrito.forEach(item => {
+                const subtotal = item.precio * item.cantidad;
+                mensaje += `*Producto:* ${item.nombre}\n`;
+                mensaje += `*Cantidad:* ${item.cantidad}\n`;
+                mensaje += `*Subtotal:* $${subtotal.toFixed(2)}\n\n`;
+                totalPedido += subtotal;
+            });
+
+            mensaje += `*TOTAL DEL PEDIDO:* $${totalPedido.toFixed(2)}`;
+
+            const mensajeCodificado = encodeURIComponent(mensaje);
+            const urlWhatsApp = `https://wa.me/${tuNumero}?text=${mensajeCodificado}`;
+
+            window.open(urlWhatsApp, '_blank');
+        });
     }
+
+    // --- INICIALIZACIÓN ---
+    // Renderizamos el carrito por primera vez al cargar cualquier página
+    renderizarCarrito();
+
 });

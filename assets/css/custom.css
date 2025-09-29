@@ -146,3 +146,21 @@ header nav {
 #carrito-desplegable #vaciar-carrito:hover {
   background-color: #c82333;
 }
+
+/* --- Estilos para el Botón de Finalizar Compra (AÑADIDO) --- */
+.button-compra {
+  width: 100%;
+  margin-bottom: 10px; /* Espacio entre los dos botones */
+  background-color: #28a745; /* Verde de éxito */
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.button-compra:hover {
+  background-color: #218838;
+}
