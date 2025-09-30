@@ -10,42 +10,26 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       data.forEach((item, index) => {
-        // --- CAMBIO IMPORTANTE ---
-        // Asegúrate de que tu archivo catalogo.json tenga un campo "id" único para cada producto.
-        // Si no lo tienes, puedes usar 'index' temporalmente, pero un 'id' es mejor.
         const productoId = item.id || index;
         
-        // --- CAMBIO IMPORTANTE ---
-        // Limpiamos el precio para asegurarnos de que sea un número válido para el carrito.
-        // Esto quita el símbolo '$', comas, y espacios. Ej: "$ 1,500.00" -> "1500.00"
-        const precioNumerico = String(item.precio).replace(/[$,\s]/g, '').trim();
+        // --- AQUÍ ESTÁ LA CORRECCIÓN IMPORTANTE ---
+        // El nuevo .replace(/[$.]/g, '') elimina los símbolos '$' Y los puntos '.'
+        const precioNumerico = String(item.precio).replace(/[$.]/g, '').trim();
 
         const producto = document.createElement("div");
         producto.classList.add("producto");
-        producto.style.opacity = 0; // Para animación
+        producto.style.opacity = 0;
 
-        // Generar nombre de archivo a partir del nombre del producto (tu lógica original)
         const nombreArchivo =
           "producto-" +
-          item.nombre
-            .toLowerCase()
-            .replace(/[áàäâ]/g, "a")
-            .replace(/[éèëê]/g, "e")
-            .replace(/[íìïî]/g, "i")
-            .replace(/[óòöô]/g, "o")
-            .replace(/[úùüû]/g, "u")
-            .replace(/ñ/g, "n")
-            .replace(/[^a-z0-9]+/g, "-")
-            .replace(/^-+|-+$/g, "") +
+          item.nombre.toLowerCase().replace(/[áàäâ]/g, "a").replace(/[éèëê]/g, "e").replace(/[íìïî]/g, "i").replace(/[óòöô]/g, "o").replace(/[úùüû]/g, "u").replace(/ñ/g, "n").replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "") +
           ".html";
         
-        // --- HTML DEL PRODUCTO MODIFICADO ---
-        // Se ha añadido el botón "Añadir al Carrito" con los atributos data-* necesarios.
         producto.innerHTML = `
           <img src="images/${item.imagen}" alt="${item.nombre}">
           <h3>${item.nombre}</h3>
           <p>${item.descripcion}</p>
-          <span class="precio">$ ${precioNumerico}</span>
+          <span class="precio">$ ${item.precio}</span>
           <a href="${nombreArchivo}" class="button">Ver más</a>
           <button class="button agregar-carrito" 
                   data-id="${productoId}" 
@@ -57,7 +41,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
         contenedor.appendChild(producto);
 
-        // Animación fade-in con retraso por índice (tu lógica original)
         setTimeout(() => {
           producto.style.transition = "opacity 0.5s ease, transform 0.5s ease";
           producto.style.opacity = 1;
